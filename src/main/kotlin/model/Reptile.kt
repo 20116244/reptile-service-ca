@@ -1,23 +1,23 @@
 package model
-import java.util.Date
+import java.time.LocalDate
 
 data class Reptile (
-    val scientific: String,
+    val scientificName: String,
     var name: String,
-    var specie: String,
+    var species: String,
     var sex: String,
     var age: Int,
     var morphs: String,
-    var adoption: Date,
-    var weight: Double,
-    var size: Double,
+    var adoptionDate: LocalDate,
+    var weightGrams: Double,
+    var lengthCm: Double,
     var diet: String,
     var health: String,
     var friendliness: Int,
-    var terrarium: Int,
+    var terrariumSizeCm: Int,
     var habitat: String,
-    var temperatureH: Double,
-    var temperatureC: Double,
-    var humidity: Double,
+    var hotSideTempC: Double,
+    var coolSideTempC: Double,
+    var humidityPercent: Double,
     var isArchived: Boolean = false
 )
