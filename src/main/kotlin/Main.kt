@@ -1,10 +1,8 @@
 import java.io.File
 import model.Reptile
-import io.github.oshai.kotlinlogging.KotlinLogging
 import utils.readNextInt
-import utils.readNextBoolean
 import utils.readNextLine
-import utils.nextDouble
+import utils.readNextDouble
 import java.time.LocalDate
 import java.time.format.DateTimeFormatter
 
@@ -109,8 +107,6 @@ fun addReptile(){
     )
     println("Note added.")
 }
-
-
 fun listAllReptiles() {
     print("""
            > ----------------------------------
