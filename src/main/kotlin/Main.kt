@@ -1,7 +1,12 @@
 import java.io.File
-import io.github.oshai.kotlinlogging.KotlinLogging
 import model.Reptile
+import io.github.oshai.kotlinlogging.KotlinLogging
 import utils.readNextInt
+import utils.readNextBoolean
+import utils.readNextLine
+import utils.nextDouble
+import java.time.LocalDate
+import java.time.format.DateTimeFormatter
 
 private val logger = KotlinLogging.logger {}
 
@@ -61,30 +66,51 @@ fun runMenu (){
     } while (input != 0)
 }
 fun addReptile(){
-    val scientific = readNextLine("Scientific name: ")
+    val scientificName = readNextLine("Scientific name: ")
     val name = readNextLine("Nickname: ")
-    val specie = readNextLine("Sub Species: ")
-    val sex = readNextLine("Sex: ")
-    val age = readNextInt("Age: ")
+    val species = readNextLine("Sub Species: ")
+    val sex = readNextLine("Sex (Male/Female/Unknown: ")
+    val age = readNextInt("Age (Years): ")
     val morphs = readNextLine("Morphs: ")
-    val adoption = readNextLine("Adoption (day/month/year): ")
-    val weight = readNextLine("Weight (GRAMS): ")
-    val size =  readNextInt("How long is the reptile ? (CM) ")
-    val diet = readNextLine("What type of diet ? ")
+    val adoptionDate = LocalDate.parse(
+        readNextLine("Adoption date (day.month.year): "),
+        DateTimeFormatter.ofPattern("d.M.yyyy"))
+    val weightGrams = readNextDouble("Weight (Grams): ")
+    val lengthCm =  readNextDouble("Length (Cm): ")
+    val diet = readNextLine("Diet: ")
     val health = readNextLine("Health:")
     val friendliness = readNextInt("How friendly it is ? (0-10) ")
-    val terrarium = readNextInt("How big the terrarium should be? (CM) ")
-    val habitat = readNextLine("Habitat:")
-    val temperatureH = readNextInt("Temperature in Hot side: ")
-    val temperatureC = readNextInt("Temperature in Cold side: ")
-    val humidity = readNextLine("Humidity lvl: ")
+    val terrariumSizeCm = readNextInt("Terrarium size (cm): ")
+    val habitat = readNextLine("Habitat: ")
+    val hotSideTempC = readNextDouble("Temperature in Hot side: ")
+    val coolSideTempC= readNextDouble("Temperature in Cold side: ")
+    val humidityPercent = readNextDouble("Humidity lvl: ")
 
     reptileNote.addReptile(
-        Reptile(scientific, name, specie, sex, age, morphs, adoption, weight, size, diet, health, friendliness, terrarium, habitat, temperatureH, temperatureC, humidity)
+        Reptile(
+            scientificName = scientificName,
+            name = name,
+            species = species,
+            sex = sex,
+            age = age,
+            morphs = morphs,
+            adoptionDate = adoptionDate,
+            weightGrams = weightGrams,
+            lengthCm = lengthCm,
+            diet = diet,
+            health = health,
+            friendliness = friendliness,
+            terrariumSizeCm = terrariumSizeCm,
+            habitat = habitat,
+            hotSideTempC = hotSideTempC,
+            coolSideTempC = coolSideTempC,
+            humidityPercent = humidityPercent
+        )
     )
-
     println("Note added.")
 }
+
+
 fun listAllReptiles() {
     print("""
            > ----------------------------------
