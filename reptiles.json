@@ -1,0 +1,20 @@
+[ {
+  "scientificName" : "Heterodon Nascius",
+  "name" : "Clementine",
+  "species" : "Colubridae",
+  "sex" : "Female",
+  "age" : 4,
+  "morphs" : "Albino",
+  "adoptionDate" : "2026-09-27",
+  "weightGrams" : 450.0,
+  "lengthCm" : 80.0,
+  "diet" : "Mice",
+  "health" : "mEH",
+  "friendliness" : 6,
+  "terrariumSizeCm" : 120,
+  "habitat" : "Dig",
+  "hotSideTempC" : 30.0,
+  "coolSideTempC" : 27.0,
+  "humidityPercent" : 60.0,
+  "isArchived" : false
+} ]
